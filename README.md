@@ -49,7 +49,7 @@ Flutter Mobile Application
 ├── AI Insight Screen
 └── Glucose Trend Graph
 ---
-
+```
 ## 🧬 Machine Learning Model
 
 - Binary classification (90-day progression risk)
