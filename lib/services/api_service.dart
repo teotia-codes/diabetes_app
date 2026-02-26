@@ -40,6 +40,16 @@ class ApiService {
       throw Exception("Patient not found");
     }
   }
+  // AI insights
+static Future<Map<String, dynamic>> getPatientInsights(String id) async {
+  final response = await http.get(Uri.parse("$baseUrl/patient/$id/explain"));
+
+  if (response.statusCode == 200) {
+    return jsonDecode(response.body);
+  } else {
+    throw Exception("Failed to load insights");
+  }
+}
   // Patient trend (graph data)
 static Future<List<dynamic>> getPatientTrend(String id) async {
   final response = await http.get(Uri.parse("$baseUrl/patient/$id/trend"));

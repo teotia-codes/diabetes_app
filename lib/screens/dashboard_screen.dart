@@ -173,29 +173,7 @@ return Scaffold(
           const SizedBox(height: 28),
 
           /// BUTTON
-          SizedBox(
-            width: double.infinity,
-            height: 56,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.indigo,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => const PatientsScreen()));
-              },
-              child: const Text(
-                "Open Patient Triage",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 40),
+          
         ],
       ),
     ),
