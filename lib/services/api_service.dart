@@ -26,6 +26,9 @@ class ApiService {
       throw Exception("Failed to load patients");
     }
   }
+  static String getInsightImage(String patientId) {
+  return "$baseUrl/patient/$patientId/insight";
+}
 
   // 🔥 FIXED: ID IS STRING NOW
   static Future<Map<String, dynamic>> getPatientDetail(String id) async {
@@ -37,4 +40,14 @@ class ApiService {
       throw Exception("Patient not found");
     }
   }
+  // Patient trend (graph data)
+static Future<List<dynamic>> getPatientTrend(String id) async {
+  final response = await http.get(Uri.parse("$baseUrl/patient/$id/trend"));
+
+  if (response.statusCode == 200) {
+    return jsonDecode(response.body);
+  } else {
+    throw Exception("Failed to load trend data");
+  }
+}
 }
