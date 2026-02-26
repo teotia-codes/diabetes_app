@@ -26,25 +26,28 @@ This project combines:
 ---
 
 ## 🏗 System Architecture
+
+```text
 Patient Dataset (CGM + Clinical Features)
-│
-▼
-ML Model (Calibrated)
-│
-▼
+        │
+        ▼
+ML Model (Calibrated Probability Output)
+        │
+        ▼
 FastAPI Backend
-├── Risk Prediction API
-├── Trend Simulation API
-├── Explainability API
-└── SHAP Visualization API
-│
-▼
-Flutter Mobile App
+├── /overview              → Population Risk Summary
+├── /patients              → Patient Risk List
+├── /patient/{id}          → Patient Detail
+├── /patient/{id}/trend    → 30-Day Glucose Trend
+├── /patient/{id}/explain  → AI Clinical Explanation
+└── /patient/{id}/insight  → SHAP Visualization
+        │
+        ▼
+Flutter Mobile Application
 ├── Overview Dashboard
 ├── Patient Risk List
 ├── AI Insight Screen
 └── Glucose Trend Graph
-
 ---
 
 ## 🧬 Machine Learning Model
